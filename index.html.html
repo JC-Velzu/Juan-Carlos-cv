@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Juan Carlos Velasco - Resume</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap">
+<style>
+:root{
+  --header:#152B4A; --accent:#123B4A; --turquoise:#35C9B7; --bg:#f6f6f8; --panel:#eeeeef; --line:#c9c9d2;
+  --text:#4a4a52; --strong:#2f2f36; --muted:#3e3e42; --dot-off:#cfcdf3; --white:#fff;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --header:#152B4A; --accent:#A7F3E8; --turquoise:#35C9B7; --bg:#16161c; --panel:#23232b; --line:#3d3d4a;
+    --text:#c9c9d2; --strong:#f0f0f4; --muted:#9a9aa6; --dot-off:#3a3868; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --header:#152B4A; --accent:#A7F3E8; --turquoise:#35C9B7; --bg:#16161c; --panel:#23232b; --line:#3d3d4a;
+  --text:#c9c9d2; --strong:#f0f0f4; --muted:#9a9aa6; --dot-off:#3a3868; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Raleway",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:14px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--header);z-index:10}
+.page{max-width:1240px;margin:0 auto;background:var(--bg)}
+
+/* header band */
+.top{background:var(--header);color:#fff;display:grid;grid-template-columns:270px 1fr;align-items:center;min-height:110px}
+.photo-cell{display:flex;justify-content:center;align-self:start}
+.photo{width:210px;height:210px;border-radius:50%;border:7px solid var(--turquoise);background:linear-gradient(#35C9B7,#4F8CFF);overflow:hidden;margin:8px 0 -100px;position:relative;z-index:2}
+.id{padding:18px 28px 18px 0;display:grid;grid-template-columns:minmax(220px,1fr) 2fr;gap:6px 28px;align-items:center}
+.id h1{margin:0;font-size:24px;font-weight:800;letter-spacing:.2px;line-height:1.15}
+.role{color:var(--turquoise);font-weight:700;font-size:20px;margin-top:6px}
+.contact{display:grid;grid-template-columns:repeat(2,auto);gap:10px 26px;justify-content:start;font-size:16px;font-weight:500}
+.contact span{display:block}
+.contact small{display:block;color:var(--turquoise);font-size:11px;font-weight:700}
+.contact a{color:#fff}
+.profile-link{display:inline-flex;align-items:center;gap:6px;text-decoration:none;}
+.profile-link svg{width:20px;height:20px;fill:var(--turquoise);flex:none;}
+
+/* body */
+.layout{display:grid;grid-template-columns:270px 1fr;gap:0}
+aside{padding:120px 22px 24px 28px}
+aside h2{margin:26px 0 12px;font-size:19px;font-weight:800;color:var(--accent)}
+aside h2:first-child{margin-top:0}
+aside p{margin:0 0 14px;font-size:13px;font-weight:600;color:var(--text)}
+aside p b{color:var(--strong)}
+aside .plain{margin:0 14px;padding:0;font-size:13px;font-weight:600;color:var(--strong)}
+main{display:grid;grid-template-columns:minmax(240px,.8fr) 1.75fr;gap:16px;padding:18px 18px 24px 18px;align-items:stretch}
+.col{display:grid;gap:16px}
+.panel{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:26px 16px 16px}
+.panel>h2{position:absolute;top:-14px;left:50%;transform:translateX(-50%);margin:0;background:var(--bg);color:var(--accent);border:2px solid var(--accent);border-radius:7px;padding:1px 14px;font-size:17px;font-weight:700;white-space:nowrap}
+.panel p{margin:0 0 14px;font-size:13px;color:var(--muted)}
+.panel p:last-child{margin-bottom:0}
+.job{margin-bottom:16px}
+.job:last-child{margin-bottom:0}
+.job h3{margin:0;font-size:14px;font-weight:700;color:var(--strong)}
+.job .meta{font-size:11.5px;color:var(--muted);margin:2px 0 6px}
+.job p{margin:0;font-size:13px;color:var(--muted)}
+.caps{display:grid;grid-template-columns:1fr 1fr;gap:3px 16px;list-style:none;margin:0;padding:0;font-size:11.5px;color:var(--muted)}
+.caps li::before{content:"- "}
+.tech{display:grid;gap:7px;font-size:12px;font-weight:700;color:var(--accent)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:260px}
+.dots{display:flex;gap:4px}
+.dots i{width:12px;height:12px;border-radius:50%;background:var(--dot-off);display:block}
+.dots i.on{background:var(--accent)}
+.dots i.half{background:linear-gradient(90deg,var(--accent) 50%,var(--dot-off) 50%)}
+
+@media (max-width:900px){
+  .top{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .photo{margin:16px 0 18px}
+  .id{grid-template-columns:1fr;padding:12px 18px 18px;justify-items:center}
+  .contact{grid-template-columns:1fr;justify-items:center}
+  .layout{grid-template-columns:1fr}
+  aside{padding:100px 22px 8px}
+  main{grid-template-columns:1fr;padding:30px 14px 24px}
+  .row{max-width:none}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="top">
+    <div class="photo-cell">
+      <div class="photo">
+        <img src="IMG_1795.jpg" alt="Portrait of Juan Carlos Velasco" style="width:100%;height:100%;object-fit:cover">
+      </div>
+    </div>
+    <div class="id">
+      <div>
+        <h1>JUAN CARLOS RAMON VELASCO ZUÑIGA</h1>
+        <div class="role">Bachelor in Administration</div>
+      </div>
+      <div class="contact">
+        <span><small>Location</small>Guadalajara, Jalisco, Mexico</span>
+        <span><small>Phone</small>+52 3312104656</span>
+        <span><small>LinkedIn</small><a class="profile-link" href="https://www.linkedin.com/in/juancavelasco">/juancavelasco<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.849-3.037-1.851 0-2.134 1.445-2.134 2.941v5.665H9.356V8.999h3.414v1.561h.047c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.287zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM3.56 20.452h3.554V8.999H3.56v11.453z"/></svg></a></span>
+        <span><small>Email</small>jca.velasco@outlook.com</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside>
+      <h2>EDUCATION</h2>
+      <p><b>2015 - 2018:</b> <br> <b>Centro Universitario UTEG</b><br> Bachelor's degree in Administration</p>
+      <p><b>2012 - 2014:</b> <br> <b>Universidad Tecnologica de Jalisco</b> <br>TSU Heavy Machinery Maintenance</p>
+      <p><b>2009 - 2012:</b> <br> <b>Centro de Estudios Administrativos de Occidente </b><br> Web Programming Diploma</p>
+      <h2>LANGUAGES</h2>
+      <ul class="plain">
+        <li>Native Spanish</li>
+        <li>Advanced English</li>
+      </ul>
+      <h2>COURSES</h2>
+      <ul class = "plain">
+        <li>Analyzing Data with Microsoft Power BI</li>
+        <li>Learn SQL</li>
+        <li>Front-End Developer</li>
+      </ul>
+    </aside>
+
+    <main>
+      <div class="col">
+        <section class="panel">
+          <h2>About me</h2>
+          <p>Hi, My name is Juan Carlos. <br>I have a multidisciplinary background with a strong focus on data analysis. I enjoy understanding how things work from industrial equipment to digital products, operational processes, and data. I am comfortable asking questions, researching details, and refining ideas until they become practical solutions. My combination of technical and business knowledge allows me to view projects from multiple perspectives, including operations, users, design, and results.</p>
+        </section>
+        <section class="panel">
+          <h2>Interests</h2>
+          <ul class="caps">
+            <li>Technology</li> <li>Running</li><li> Video Games</li> <li>Plants</li>
+            <li>IoT and Home Automations</li> <li>Gym</li><li> Innovation</li> <li>Home Design</li>
+          </ul>
+        </section>
+          <section class="panel">
+            <h2>Abilities</h2>
+            <ul class="caps">
+              <li>Analytical thinking</li><li>Troubleshooting</li>
+              <li>Curiosity</li><li>Learning agility</li>
+              <li>Adaptability to new tools</li><li>Planning and coordination</li>
+            </ul>
+          </section>
+          <section class="panel">
+            <h2>Technical Skills</h2>
+            <div class="tech">
+              <div class="row">Power BI <span class="dots" role="img" aria-label="5 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+              <div class="row">SQL <span class="dots" role="img" aria-label="4 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div>
+              <div class="row">Spreadsheets <span class="dots" role="img" aria-label="5 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+              <div class="row">Programming <span class="dots" role="img" aria-label="2.5 of 5"><i class="on"></i><i class="on"></i><i class="half"></i><i></i><i></i></span></div>
+            </div>
+          </section>
+      </div>
+
+      <div class="col">
+        <section class="panel">
+          <h2>Experience</h2>
+          <article class="job">
+            <h3>Data Specialist • Agile Engine</h3>
+            <div class="meta">2022 - Present | Remote</div>
+            <p>Built and maintained Power BI dashboards to monitor CRM data quality, employee productivity, worklogs, and operational risks using Jira, Jira Tempo, Zoho, and SQL data. Used SQL, DAX, and Power Query to prepare data, create metrics, and deliver accurate reporting for decision-making.<br>Established the department’s first centralized measurement process for digital assets, accounts, and virtual machines, improving budget visibility and operational control. Also supported marketing operations and tested process improvements to address platform restrictions and policy changes.</p>
+          </article>
+          <article class="job">
+            <h3>Customer Service Executive • Advanced Technology Research / Zuni</h3>
+            <div class="meta">2018 - 2022 | Tlaquepaque, Jalisco</div>
+            <p>Managed corporate accounts while coordinating customer service, suppliers, billing, and operational follow-up. Created Excel and Power BI reports for equipment status, inventory, billing, payments, sales, and account activity.<br>Consolidated data from HubSpot, Monday.com, Microsoft cloud tools, and internal systems to improve reporting consistency. Used DAX, Excel, and Power BI to turn operational information into clear insights for clients and internal teams.</p>
+          </article>
+          <article class="job">
+            <h3>Staff Leader • Domopolis Entertainment Center</h3>
+            <div class="meta">2015 - 2018 | Guadalajara, Jalisco</div>
+            <p>Led teams of 8–10 staff members during academic, sports, and private events, ensuring organized operations and quick resolution of issues. Maintained Excel records for customers, appointments, equipment, and event logistics.<br>Coordinated audiovisual, lighting, and sound installations while troubleshooting technical issues during events. Served as the main customer contact, balancing client requirements with available resources.</p>
+          </article>
+          <article class="job">
+            <h3>Administrative Assistant and Systems Advisor • Sindicato Nacional De Alijadores</h3>
+            <div class="meta">2011 - 2015 | Guadalajara, Jalisco</div>
+            <p>Managed payroll data using Office PAQ and Excel, creating templates and standardized formats that improved data entry consistency and supported recurring administrative processes.<br>Prepared internal documents and provided basic computer maintenance, updates, and troubleshooting. Developed practical tools to keep records organized and make daily operations more efficient.</p>
+          </article>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+</body>
+</html>
